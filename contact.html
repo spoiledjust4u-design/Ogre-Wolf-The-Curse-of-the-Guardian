@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Report a Kingsley or Ogre-Wolf sighting from your journey through Ravenwood.">
+    <title>Contact - Report a Sighting</title>
+    <link rel="stylesheet" href="style.css">
+</head><body><header>
+    <h1>Report a Sighting</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="characters.html">Characters</a>
+    <a href="levels.html">Levels</a>
+    <a href="lore.html">The Story</a>
+    <a href="media.html">Media</a>
+    <a href="links.html">Links</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+    <h2>Have You Seen Kingsley?</h2>
+
+    <p>
+        Have you encountered the mysterious Ogre-Wolf during your journey
+        through Ravenwood? Tell us what you discovered.
+    </p>
+
+    <p>
+        Your report may reveal another clue about Kingsley and the strange
+        events happening throughout the forest.
+    </p>
+
+    <form action="mailto:yourname@example.com" method="post" enctype="text/plain">
+
+        <label for="name">Player Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="sighting">Where did you see Kingsley?</label><br>
+
+        <select id="sighting" name="location">
+
+            <option value="ravenwood">
+                Ravenwood Village
+            </option>
+
+            <option value="forest">
+                Dark Forest
+            </option>
+
+            <option value="den">
+                Kingsley's Den
+            </option>
+
+            <option value="mine">
+                Abandoned Mine
+            </option>
+
+            <option value="swamp">
+                Black Swamp
+            </option>
+
+            <option value="temple">
+                Forgotten Temple
+            </option>
+
+            <option value="unknown">
+                Unknown Location
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <label for="msg">Additional Details:</label><br>
+
+        <textarea
+            id="msg"
+            name="message"
+            rows="6"
+            cols="50"
+            placeholder="Describe what happened during your encounter..."></textarea>
+
+        <br><br>
+
+        <button type="submit">Submit Report</button>
+
+    </form>
+
+    <section class="monster-lore">
+
+        <h2>Important Warning</h2>
+
+        <p>
+            Not every sighting tells the same story.
+        </p>
+
+        <p>
+            Some villagers claim Kingsley is a dangerous monster.
+            Others believe he is protecting the forest.
+        </p>
+
+        <p>
+            <strong>
+                Be careful what you believe.
+            </strong>
+        </p>
+
+    </section>
+
+</div>
+
+</body>
+</html>
