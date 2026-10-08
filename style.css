@@ -391,5 +391,135 @@ h2 {
     padding-left: 10px;
     padding-right: 10px;
 }
+.story-image {
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba (0, 0, 0, 0.5);
+}
+
+.level-select {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.level-select h2 {
+    margin-bottom: 10px;
+}
+
+.level-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.level-buttons button {
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.level-buttons button:hover {
+    transform: scale(1.05);
+}
+
+.level-select {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.level-select h2 {
+    margin-bottom: 10px;
+}
+
+.level-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.level-buttons button {
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.level-buttons button:hover {
+    transform: scale(1.05);
+}
+.level-buttons a.level-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #e74c3c !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.level-buttons a.level-button {
+    background-color: orange !important;
+    color: white !important;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.level-buttons a.level-button {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.level-buttons a.level-button:hover {
+    background: #c0392b;
+}
 
 }
+.level-buttons a.level-button {
+    display: inline-block;
+    box-sizing: border-box;
+    width: auto;
+    height: 42px;
+    padding: 10px 20px;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1em;
+    line-height: 22px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    background-color: #ff4d4d;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.level-buttons a.level-button:hover {
+    background-color: #e67e00;
+    transform: scale(1.05);
+}
+

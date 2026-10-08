@@ -87,6 +87,25 @@
             </tr>
 
         </table>
+<section class="level-select">
+    <h2>Choose a Level</h2>
+
+    <p>
+        Select a level to begin playing or to test a specific
+        part of the adventure.
+    </p>
+
+    <div class="level-buttons">
+        <a href="index.html"class="level-button">Level 1</a>
+        <button onclick="startLevel2()">Level 2</button>
+        <button onclick="startLevel3()">Level 3</button>
+        <button onclick="startLevel4()">Level 4</button>
+        <button onclick="continueToLevel5()">Level 5</button>
+        <button onclick="startLevel6()">Level 6</button>
+    </div>
+</section>
+
+
 
         <div class="game-button">
             <button onclick="startLevel2()">Begin Level 2</button>
@@ -117,7 +136,6 @@
         <p>&copy; 2026 Ogre-Wolf: The Curse of the Guardian</p>
     </footer>
 
-    <script src="game.js"></script>
 
     <script>
 
@@ -644,6 +662,56 @@ function startLevel3() {
     `;
 }
 
+function searchOutsideDen() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Outside the Den</h2>
+
+            <p>
+                You decide to search the area outside the den
+                before going inside.
+            </p>
+
+            <p>
+                The four teenagers carefully examine the ground
+                around the entrance.
+            </p>
+
+            <p>
+                You discover strange footprints leading deeper
+                into the forest.
+            </p>
+
+            <p>
+                Nearby, you find several claw marks carved into
+                an ancient tree.
+            </p>
+
+            <p>
+                The markings look almost identical to the symbol
+                on the Guardian's stone.
+            </p>
+
+            <p>
+                Suddenly, you hear a low growl coming from
+                somewhere inside the den.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="enterDen()">
+                Enter the Den
+            </button>
+
+            <button onclick="followTheShadow()">
+                Follow the Shadow
+            </button>
+        </div>
+    `;
+}
+
 function enterDen() {
     const game = document.getElementById("level2-game");
 
@@ -729,6 +797,294 @@ function followTheShadow() {
 
             <button onclick="examineStoneDoor()">
                 Examine the Stone Door
+            </button>
+        </div>
+    `;
+}
+
+function examineStoneDoor() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>The Ancient Stone Door</h2>
+
+            <p>
+                You carefully examine the massive stone door
+                hidden inside the den.
+            </p>
+
+            <p>
+                Strange Guardian symbols cover its surface.
+            </p>
+
+            <p>
+                You notice that one of the symbols is glowing.
+            </p>
+
+            <p>
+                The glowing symbol looks exactly like the mark
+                on your hand.
+            </p>
+
+            <p>
+                When you place your hand against the door,
+                the stone begins to shake.
+            </p>
+
+            <p>
+                A deep rumbling sound comes from behind it.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="speakToKingsley()">
+                Ask Kingsley About the Door
+            </button>
+
+            <button onclick="askKingsleyForHelp()">
+                Ask Kingsley for Help
+            </button>
+        </div>
+    `;
+}
+
+function askKingsleyForHelp() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Kingsley's Help</h2>
+
+            <p>
+                You ask Kingsley to help you open the ancient
+                stone door.
+            </p>
+
+            <p>
+                Kingsley studies the Guardian symbols carefully.
+            </p>
+
+            <p>
+                <strong>
+                    "This door was created to protect something
+                    powerful."
+                </strong>
+            </p>
+
+            <p>
+                Kingsley places his hand beside yours on the
+                glowing symbol.
+            </p>
+
+            <p>
+                The ancient door begins to open.
+            </p>
+
+            <p>
+                A hidden passage appears behind it.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="openStoneDoor()">
+                Open the Stone Door
+            </button>
+
+            <button onclick="waitForKingsley()">
+                Wait for Kingsley
+            </button>
+        </div>
+    `;
+}
+
+function waitForKingsley() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Kingsley's Warning</h2>
+
+            <p>
+                You decide to wait for Kingsley instead of
+                opening the stone door immediately.
+            </p>
+
+            <p>
+                Kingsley studies the ancient symbols carefully.
+            </p>
+
+            <p>
+                Suddenly, the Guardian mark on your hand begins
+                to glow.
+            </p>
+
+            <p>
+                Kingsley steps back in surprise.
+            </p>
+
+            <p>
+                <strong>
+                    "The Guardian is warning us. There is
+                    something dangerous beyond that door."
+                </strong>
+            </p>
+
+            <p>
+                A deep growl echoes from somewhere beyond
+                the stone door.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="enterHiddenPassageFromWarning()">
+                Enter the Passage Anyway
+            </button>
+
+            <button onclick="prepareForDanger()">
+                Prepare for the Danger
+            </button>
+        </div>
+    `;
+}
+
+function enterHiddenPassageFromWarning() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Into the Unknown</h2>
+
+            <p>
+                You decide to trust the Guardian's warning
+                and enter the passage carefully.
+            </p>
+
+            <p>
+                Kingsley follows close behind.
+            </p>
+
+            <p>
+                The passage becomes darker as you move deeper
+                beneath the den.
+            </p>
+
+            <p>
+                You discover three tunnels leading in different
+                directions.
+            </p>
+
+            <h3>Which tunnel will you choose?</h3>
+
+            <button onclick="chooseLeftTunnel()">
+                Take the Left Tunnel
+            </button>
+
+            <button onclick="chooseMiddleTunnel()">
+                Take the Middle Tunnel
+            </button>
+
+            <button onclick="chooseRightTunnel()">
+                Take the Right Tunnel
+            </button>
+        </div>
+    `;
+}
+
+function prepareForDanger() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Prepared for the Danger</h2>
+
+            <p>
+                You and the other teenagers prepare yourselves
+                for whatever is waiting beyond the stone door.
+            </p>
+
+            <p>
+                Kingsley raises his Guardian weapon and stands
+                beside you.
+            </p>
+
+            <p>
+                The stone door slowly opens.
+            </p>
+
+            <p>
+                A cold wind rushes through the hidden passage.
+            </p>
+
+            <p>
+                Three dark tunnels stretch ahead.
+            </p>
+
+            <p>
+                You realize that there is no turning back now.
+            </p>
+
+            <h3>Which path will you take?</h3>
+
+            <button onclick="chooseLeftTunnel()">
+                Take the Left Tunnel
+            </button>
+
+            <button onclick="chooseMiddleTunnel()">
+                Take the Middle Tunnel
+            </button>
+
+            <button onclick="chooseRightTunnel()">
+                Take the Right Tunnel
+            </button>
+        </div>
+    `;
+}
+
+function prepareForTheHollowKing() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Preparing for the Hollow King</h2>
+
+            <p>
+                You realize that the hidden passage may lead
+                directly to the Hollow King.
+            </p>
+
+            <p>
+                The four teenagers prepare themselves for
+                whatever waits beyond the ancient door.
+            </p>
+
+            <p>
+                Kingsley raises his Guardian staff.
+            </p>
+
+            <p>
+                <strong>
+                    "Stay together. Whatever happens,
+                    do not let the darkness separate you."
+                </strong>
+            </p>
+
+            <p>
+                The stone door opens completely.
+            </p>
+
+            <p>
+                A cold wind rushes through the passage.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="enterHiddenPassage()">
+                Enter the Hidden Passage
+            </button>
+
+            <button onclick="searchForTheMark()">
+                Search for the Guardian Mark
             </button>
         </div>
     `;
@@ -1162,6 +1518,91 @@ function examineChamber() {
     `;
 }
 
+function returnToTunnels() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Back to the Tunnels</h2>
+
+            <p>
+                You decide that the chamber is not safe.
+                You turn around and return to the underground
+                passage.
+            </p>
+
+            <p>
+                Kingsley follows you back to the three-way
+                intersection.
+            </p>
+
+            <p>
+                The three tunnels disappear into darkness.
+            </p>
+
+            <h3>Which path will you take?</h3>
+
+            <button onclick="chooseLeftTunnel()">
+                Take the Left Tunnel
+            </button>
+
+            <button onclick="chooseMiddleTunnel()">
+                Take the Middle Tunnel
+            </button>
+
+            <button onclick="chooseRightTunnel()">
+                Take the Right Tunnel
+            </button>
+        </div>
+    `;
+}
+function leaveKeyBehind() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>The Guardian's Key</h2>
+
+            <p>
+                You decide to leave the Guardian's key where
+                you found it.
+            </p>
+
+            <p>
+                Kingsley looks at the ancient key carefully.
+            </p>
+
+            <p>
+                <strong>
+                    "That key was hidden here for a reason."
+                </strong>
+            </p>
+
+            <p>
+                You realize that leaving the key behind may
+                make the journey more dangerous.
+            </p>
+
+            <p>
+                Suddenly, the key begins to glow.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="takeGuardiansKey()">
+                Take the Guardian's Key
+            </button>
+
+            <button onclick="returnToTunnels()">
+                Leave the Key and Return to the Tunnels
+            </button>
+        </div>
+    `;
+}
+
+
+
+
 function takeGuardiansKey() {
     const game = document.getElementById("level2-game");
 
@@ -1207,6 +1648,137 @@ function takeGuardiansKey() {
 
             <button onclick="giveKeyToKingsley()">
                 Give the Key to Kingsley
+            </button>
+        </div>
+    `;
+}
+function giveKeyToKingsley() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>The Guardian's Key</h2>
+
+            <p>
+                You decide to give the ancient Guardian's key
+                to Kingsley.
+            </p>
+
+            <p>
+                Kingsley carefully takes the key and studies
+                the symbol carved into it.
+            </p>
+
+            <p>
+                <strong>
+                    "This key was created by the original
+                    Guardian. It may unlock the path ahead."
+                </strong>
+            </p>
+
+            <p>
+                The key begins to glow in Kingsley's hand.
+            </p>
+
+            <p>
+                A hidden doorway opens deeper inside the chamber.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="rescueChildren()">
+                Rescue the Children
+            </button>
+
+            <button onclick="faceHollowKing()">
+                Face the Hollow King
+            </button>
+        </div>
+    `;
+}
+
+function faceHollowKing() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Face the Hollow King</h2>
+
+            <p>
+                You decide that the only way to save the children
+                is to face the Hollow King.
+            </p>
+
+            <p>
+                You step forward into the darkness.
+                A deep growl echoes through the chamber.
+            </p>
+
+            <p>
+                The Hollow King emerges from the shadows,
+                surrounded by a dark mist.
+            </p>
+
+            <p>
+                Kingsley raises his weapon and prepares to stand
+                beside you.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="helpKingsley()">
+                Stay and Help Kingsley
+            </button>
+
+            <button onclick="leadChildrenOut()">
+                Lead the Children Outside
+            </button>
+        </div>
+    `;
+}
+
+
+function hideTheKey() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>The Hidden Guardian's Key</h2>
+
+            <p>
+                You decide to hide the Guardian's key rather
+                than use it immediately.
+            </p>
+
+            <p>
+                You carefully place the key inside a hidden
+                chamber within the ancient ruins.
+            </p>
+
+            <p>
+                Kingsley watches carefully.
+            </p>
+
+            <p>
+                <strong>
+                    "We may need that key before this journey
+                    is over."
+                </strong>
+            </p>
+
+            <p>
+                Suddenly, you hear the sound of children
+                crying somewhere deeper inside the ruins.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="rescueChildren()">
+                Rescue the Children
+            </button>
+
+            <button onclick="faceHollowKing()">
+                Face the Hollow King
             </button>
         </div>
     `;
@@ -1310,6 +1882,8 @@ function useGuardiansKey() {
         </div>
     `;
 }
+
+
 function rescueChildren() {
     const game = document.getElementById("level2-game");
 
@@ -1318,35 +1892,18 @@ function rescueChildren() {
             <h2>The Missing Children</h2>
 
             <p>
-                You rush through the doorway and find the six
-                missing children trapped inside the chamber.
+                You discover the six missing children hiding
+                inside a chamber beneath the den.
             </p>
 
             <p>
-                They are frightened, but they are alive.
+                They are frightened but relieved to see the
+                four teenagers.
             </p>
 
             <p>
-                You quickly help them out of their restraints.
-            </p>
-
-            <p>
-                Suddenly, a deep roar shakes the entire chamber.
-            </p>
-
-            <p>
-                Kingsley steps between you and the darkness.
-            </p>
-
-            <p>
-                <strong>
-                    "Get the children out. I'll hold him back."
-                </strong>
-            </p>
-
-            <p>
-                The four teenagers lead the children toward
-                the hidden passage.
+                Kingsley stands between the children and the
+                darkness approaching from the tunnel.
             </p>
 
             <h3>What will you do?</h3>
@@ -1366,35 +1923,29 @@ function helpKingsley() {
 
     game.innerHTML = `
         <div class="game-box">
-            <h2>Stand With the Guardian</h2>
+            <h2>Stand With Kingsley</h2>
 
             <p>
-                You refuse to leave Kingsley behind.
+                You refuse to leave Kingsley alone.
             </p>
 
             <p>
-                The four teenagers stand beside him as
-                a massive shadow emerges from the darkness.
+                The four teenagers stand beside him as the
+                darkness approaches.
             </p>
 
             <p>
-                The Hollow King finally reveals himself.
-            </p>
-
-            <p>
-                He is a towering figure surrounded by
-                swirling darkness.
+                Kingsley raises his Guardian weapon.
             </p>
 
             <p>
                 <strong>
-                    "You cannot stop what has already begun."
+                    "Together, we can stop it."
                 </strong>
             </p>
 
             <p>
-                Kingsley raises his claws and prepares
-                to defend the children.
+                A powerful shadow emerges from the darkness.
             </p>
 
             <h3>What will you do?</h3>
@@ -1409,40 +1960,67 @@ function helpKingsley() {
         </div>
     `;
 }
+
+function leadChildrenOut() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Lead the Children Outside</h2>
+
+            <p>
+                You decide that the most important thing is getting
+                the children to safety.
+            </p>
+
+            <p>
+                You carefully lead the children away from the
+                Hollow King and toward the hidden passage.
+            </p>
+
+            <p>
+                The children follow you through the darkness.
+                Behind you, Kingsley continues to confront the
+                Hollow King.
+            </p>
+
+            <p>
+                You finally reach the entrance to the den.
+                The children are safe, but you know Kingsley
+                still needs your help.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="helpKingsley()">
+                Go Back and Help Kingsley
+            </button>
+
+            <button onclick="startLevel4()">
+                Continue to Level 4
+            </button>
+        </div>
+    `;
+}
+
 function attackHollowKing() {
     const game = document.getElementById("level2-game");
 
     game.innerHTML = `
         <div class="game-box">
-            <h2>The Final Battle Begins</h2>
+            <h2>The Battle Begins</h2>
 
             <p>
-                You charge toward the Hollow King.
+                You and Kingsley stand against the Hollow King.
             </p>
 
             <p>
-                The darkness around him explodes outward,
-                but the Guardian's mark protects you.
+                The ancient creature releases a wave of dark
+                energy.
             </p>
 
             <p>
-                Kingsley joins the attack.
-                Together, you push the Hollow King back.
-            </p>
-
-            <p>
-                The chamber begins to shake violently.
-            </p>
-
-            <p>
-                The Hollow King raises his hand and summons
-                a powerful wave of darkness.
-            </p>
-
-            <p>
-                <strong>
-                    This battle is far from over.
-                </strong>
+                The Guardian's mark begins to glow on your hand.
             </p>
 
             <h3>What will you do?</h3>
@@ -1456,7 +2034,7 @@ function attackHollowKing() {
             </button>
         </div>
     `;
-    }
+}
     
     function useGuardianPower() {
     const game = document.getElementById("level2-game");
@@ -1466,32 +2044,16 @@ function attackHollowKing() {
             <h2>The Guardian's Power</h2>
 
             <p>
-                You place your marked hand against the ground.
+                You summon the remaining power of the ancient
+                Guardian.
             </p>
 
             <p>
-                A powerful light spreads through the chamber.
+                A brilliant light surrounds you and Kingsley.
             </p>
 
             <p>
-                The darkness surrounding the Hollow King
-                begins to disappear.
-            </p>
-
-            <p>
-                Kingsley realizes what is happening.
-            </p>
-
-            <p>
-                <strong>
-                    "The Guardian's power was never meant
-                    to destroy him. It was meant to break the curse."
-                </strong>
-            </p>
-
-            <p>
-                The light surrounds Kingsley and the Hollow King.
-                The ancient curse begins to crack.
+                The Hollow King's darkness begins to weaken.
             </p>
 
             <h3>What will you do?</h3>
@@ -1505,47 +2067,32 @@ function attackHollowKing() {
             </button>
         </div>
     `;
-    }
+}
 
     function breakTheCurse() {
     const game = document.getElementById("level2-game");
 
     game.innerHTML = `
         <div class="game-box">
-            <h2>The Curse Is Broken</h2>
+            <h2>The Curse Begins to Break</h2>
 
             <p>
-                You focus all of the Guardian's power on the curse.
+                The Guardian's power strikes the darkness
+                surrounding the Hollow King.
             </p>
 
             <p>
-                A brilliant light fills the underground chamber.
+                The ancient curse begins to crack.
             </p>
 
             <p>
-                The darkness surrounding Kingsley begins to disappear.
-            </p>
-
-            <p>
-                The Ogre-Wolf lets out one final roar.
-            </p>
-
-            <p>
-                Then everything becomes silent.
-            </p>
-
-            <p>
-                When the light fades, Kingsley is no longer
-                the Ogre-Wolf.
-            </p>
-
-            <p>
-                He has returned to his human form.
+                Kingsley calls out to you.
             </p>
 
             <p>
                 <strong>
-                    The Guardian has been freed from the curse.
+                    "Finish it! The Guardian's power is
+                    strong enough!"
                 </strong>
             </p>
 
@@ -1561,6 +2108,7 @@ function attackHollowKing() {
         </div>
     `;
 }
+
 function freeTheChildren() {
     const game = document.getElementById("level2-game");
 
@@ -1569,40 +2117,32 @@ function freeTheChildren() {
             <h2>The Children Are Free</h2>
 
             <p>
-                With Kingsley freed from the curse, the ancient
-                prison begins to collapse.
+                The Guardian's power breaks the final chains
+                holding the children inside the dark chamber.
             </p>
 
             <p>
-                You quickly lead all six missing children
-                out of the chamber.
+                The six missing children are finally free.
             </p>
 
             <p>
-                Kingsley follows behind you, protecting everyone
-                from the falling stones.
+                Kingsley looks toward the ancient passage
+                leading deeper beneath Ravenwood.
             </p>
 
             <p>
-                You finally reach the surface of Ravenwood.
-            </p>
-
-            <p>
-                The children are reunited with their families.
+                The darkness has been weakened, but the journey
+                is not over.
             </p>
 
             <p>
                 <strong>
-                    You have rescued all six missing children!
+                    "There is still another kingdom beneath
+                    Ravenwood," Kingsley says.
                 </strong>
             </p>
 
-            <p>
-                But deep beneath Ravenwood, something is still
-                watching from the darkness.
-            </p>
-
-            <h3>Level 3 Complete</h3>
+            <h3>Level 3 Complete!</h3>
 
             <button onclick="startLevel4()">
                 Continue to Level 4
@@ -1656,6 +2196,54 @@ function startLevel4() {
         </div>
     `;
 }
+
+function askMaraForAnswers() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Ask Mara for Answers</h2>
+
+            <p>
+                You find Mara waiting near the entrance to the
+                Hollow Kingdom.
+            </p>
+
+            <p>
+                You explain everything that happened with Kingsley,
+                the Hollow King, and the missing children.
+            </p>
+
+            <p>
+                Mara looks toward the ruined kingdom and becomes
+                serious.
+            </p>
+
+            <p>
+                <strong>
+                    "The curse began long before Kingsley became
+                    the Ogre-Wolf. If you want to end it, you must
+                    uncover what is hidden beneath this kingdom."
+                </strong>
+            </p>
+
+            <p>
+                Mara points toward two paths leading into the ruins.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="enterHollowKingdom()">
+                Enter the Hollow Kingdom
+            </button>
+
+            <button onclick="exploreRuins()">
+                Explore the Ruins
+            </button>
+        </div>
+    `;
+}
+
 function enterHollowKingdom() {
     const game = document.getElementById("level2-game");
 
@@ -1698,6 +2286,46 @@ function enterHollowKingdom() {
         </div>
     `;
 }
+function exploreRuins() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Explore the Ruins</h2>
+
+            <p>
+                You decide to explore the ancient ruins before
+                entering the castle.
+            </p>
+
+            <p>
+                Broken statues and ancient stones cover the ground.
+                You notice strange markings carved into the walls.
+            </p>
+
+            <p>
+                The markings appear to tell the story of the
+                Guardian and the curse that changed Kingsley.
+            </p>
+
+            <p>
+                As you investigate deeper into the ruins, you
+                discover a hidden passage leading toward the castle.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="approachCastle()">
+                Approach the Castle
+            </button>
+
+            <button onclick="hideFromCastle()">
+                Hide and Watch
+            </button>
+        </div>
+    `;
+}
+
 function chooseKingdomPath() {
     const game = document.getElementById("level2-game");
 
@@ -1742,6 +2370,46 @@ function chooseKingdomPath() {
 
             <button onclick="hideFromCastle()">
                 Hide and Watch
+            </button>
+        </div>
+    `;
+}
+
+function hideFromCastle() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Hidden Observation</h2>
+
+            <p>
+                You remain hidden among the ruins and carefully
+                watch the castle.
+            </p>
+
+            <p>
+                After several moments, you notice a strange
+                movement near the castle entrance.
+            </p>
+
+            <p>
+                A shadowy figure enters the castle carrying an
+                ancient object.
+            </p>
+
+            <p>
+                You realize that waiting has revealed another
+                way into the castle.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="approachCastle()">
+                Enter the Castle
+            </button>
+
+            <button onclick="destroyCrownPower()">
+                Investigate the Ancient Object
             </button>
         </div>
     `;
@@ -1935,55 +2603,7 @@ function takeTheCrown() {
             </button>
         </div>
     `;
-}
-function destroyCrownPower() {
-    const game = document.getElementById("level2-game");
 
-    game.innerHTML = `
-        <div class="game-box">
-            <h2>The Crown Shatters</h2>
-
-            <p>
-                You raise the Guardian's power against the
-                Crown of Darkness.
-            </p>
-
-            <p>
-                The crown begins to crack.
-            </p>
-
-            <p>
-                A powerful wave of light spreads across
-                the Hollow Kingdom.
-            </p>
-
-            <p>
-                The Hollow King cries out as the darkness
-                surrounding him begins to disappear.
-            </p>
-
-            <p>
-                With one final burst of energy, the crown
-                shatters into pieces.
-            </p>
-
-            <p>
-                <strong>
-                    The Hollow King's power is fading.
-                </strong>
-            </p>
-
-            <h3>What will you do?</h3>
-
-            <button onclick="freeHollowKing()">
-                Free the Hollow King
-            </button>
-
-            <button onclick="endHollowKing()">
-                End the Hollow King
-            </button>
-        </div>
-    `;
 }
 
 function freeHollowKing() {
@@ -2184,7 +2804,7 @@ function strengthenTheChains() {
 
             <h3>What will you do?</h3>
 
-            <button onclick="returnToRavenwood()">
+            <button onclick="returnToTownWithKinsley()">
                 Return to Ravenwood
             </button>
 
@@ -2194,6 +2814,80 @@ function strengthenTheChains() {
         </div>
     `;
 }
+
+function wakeTheShadowBeast() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>The Shadow Beast Awakens</h2>
+
+            <p>
+                You approach the ancient chamber and hear a deep
+                growl coming from the darkness.
+            </p>
+
+            <p>
+                The Shadow Beast slowly awakens.
+                Its eyes glow as it breaks free from the ancient
+                chains.
+            </p>
+
+            <p>
+                The ground shakes beneath your feet.
+                You realize that the creature is heading toward
+                Ravenwood.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="returnToRavenwood()">
+                Return to Ravenwood
+            </button>
+
+            <button onclick="searchTheKingdom()">
+                Search the Kingdom
+            </button>
+        </div>
+    `;
+}
+
+function searchTheKingdom() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Search the Kingdom</h2>
+
+            <p>
+                You decide to search the Hollow Kingdom before
+                returning to Ravenwood.
+            </p>
+
+            <p>
+                You discover ancient tracks leading through the
+                ruined kingdom.
+            </p>
+
+            <p>
+                The tracks belong to the Shadow Beast.
+                Following them may reveal where the creature is going.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="returnToRavenwood()">
+                Return to Ravenwood
+            </button>
+
+            <button onclick="followShadowTracks()">
+                Follow the Shadow Tracks
+            </button>
+        </div>
+    `;
+}
+
+
 function returnToRavenwood() {
     const game = document.getElementById("level2-game");
 
@@ -2392,40 +3086,32 @@ function standAgainstBeast() {
         </div>
     `;
 }
-function faceYourFear() {
+
+function runToTheStone() {
     const game = document.getElementById("level2-game");
 
     game.innerHTML = `
         <div class="game-box">
-            <h2>Face Your Fear</h2>
+            <h2>The Guardian Stone</h2>
 
             <p>
-                You refuse to let fear control you.
-                The four teenagers stand together.
+                You decide that fighting the Shadow Beast is too
+                dangerous.
             </p>
 
             <p>
-                The Shadow Beast growls and moves closer,
-                but you do not run.
+                You run toward the ancient Guardian Stone while
+                the beast follows close behind.
             </p>
 
             <p>
-                The Guardian's mark begins to glow brighter.
+                As you reach the stone, its ancient symbols begin
+                to glow.
             </p>
 
             <p>
-                The ancient Guardian appears beside Kingsley.
-            </p>
-
-            <p>
-                <strong>
-                    "Courage is stronger than darkness."
-                </strong>
-            </p>
-
-            <p>
-                The Shadow Beast begins to weaken as the
-                Guardian's light surrounds it.
+                You feel a powerful energy surrounding you.
+                This may be your chance to stop the Shadow Beast.
             </p>
 
             <h3>What will you do?</h3>
@@ -2436,6 +3122,84 @@ function faceYourFear() {
 
             <button onclick="speakToTheBeast()">
                 Speak to the Shadow Beast
+            </button>
+        </div>
+    `;
+}
+function speakToTheBeast() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Speak to the Shadow Beast</h2>
+
+            <p>
+                Instead of attacking, you lower your weapon and
+                speak calmly to the Shadow Beast.
+            </p>
+
+            <p>
+                The creature stops and watches you carefully.
+                For a moment, the darkness surrounding it begins
+                to fade.
+            </p>
+
+            <p>
+                You realize that the Shadow Beast may not be
+                completely evil. Something is controlling it.
+            </p>
+
+            <p>
+                The Guardian Stone begins to glow brighter.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="useGuardianStone()">
+                Use the Guardian Stone
+            </button>
+
+            <button onclick="faceYourFear()">
+                Face Your Fear
+            </button>
+        </div>
+    `;
+}
+
+function faceYourFear() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Face Your Fear</h2>
+
+            <p>
+                You take a deep breath and stand your ground.
+            </p>
+
+            <p>
+                The Shadow Beast moves closer, but you refuse
+                to run.
+            </p>
+
+            <p>
+                The Guardian Stone responds to your courage.
+                Ancient light begins to surround the beast.
+            </p>
+
+            <p>
+                The darkness begins to weaken, and the Shadow
+                Beast starts to lose its power.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="useGuardianStone()">
+                Use the Guardian Stone
+            </button>
+
+            <button onclick="sealTheBeast()">
+                Seal the Shadow Beast
             </button>
         </div>
     `;
@@ -2585,6 +3349,47 @@ function returnToRavenwoodAfterBattle() {
         </div>
     `;
 }
+function askGuardianAboutTheFuture() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>The Guardian's Warning</h2>
+
+            <p>
+                You ask the ancient Guardian what the future holds
+                for Ravenwood.
+            </p>
+
+            <p>
+                The Guardian looks toward the distant village and
+                warns you that the darkness has not completely
+                disappeared.
+            </p>
+
+            <p>
+                However, the path ahead is becoming clearer.
+                The children are safe, and the curse is weakening.
+            </p>
+
+            <p>
+                The Guardian tells you that another trial awaits
+                you beyond the kingdom.
+            </p>
+
+            <h3>Your journey continues...</h3>
+
+            <button onclick="continueToLevel5()">
+                Continue to Level 5
+            </button>
+
+            <button onclick="returnToRavenwood()">
+                Return to Ravenwood
+            </button>
+        </div>
+    `;
+}
+
 function continueToLevel5() {
     const game = document.getElementById("level2-game");
 
@@ -2631,6 +3436,84 @@ function continueToLevel5() {
         </div>
     `;
 }
+function protectRavenwood() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Protect Ravenwood</h2>
+
+            <p>
+                You decide to return to Ravenwood and protect the
+                village from any remaining danger.
+            </p>
+
+            <p>
+                The villagers gather together as you explain what
+                happened in the Hollow Kingdom.
+            </p>
+
+            <p>
+                You notice strange shadows moving beyond the edge
+                of the village.
+            </p>
+
+            <p>
+                Something may still be searching for Ravenwood.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="searchForFinalGuardian()">
+                Search for the Final Guardian
+            </button>
+
+            <button onclick="defendTheVillage()">
+                Defend the Village
+            </button>
+        </div>
+    `;
+}
+function defendTheVillage() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Defend the Village</h2>
+
+            <p>
+                You gather the villagers together and prepare to
+                defend Ravenwood.
+            </p>
+
+            <p>
+                The strange shadows move closer, but you refuse
+                to let the darkness reach the village.
+            </p>
+
+            <p>
+                You organize the villagers and protect the village
+                gates while watching the forest for danger.
+            </p>
+
+            <p>
+                As the night passes, you discover signs that the
+                final Guardian may still be nearby.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="searchForFinalGuardian()">
+                Search for the Final Guardian
+            </button>
+
+            <button onclick="takeGuardianSword()">
+                Search for the Guardian's Weapon
+            </button>
+        </div>
+    `;
+}
+
 function searchForFinalGuardian() {
     const game = document.getElementById("level2-game");
 
@@ -2728,6 +3611,46 @@ function takeGuardianSword() {
         </div>
     `;
 }
+function giveSwordToKingsley() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>The Guardian's Sword</h2>
+
+            <p>
+                You decide that Kingsley should have the ancient
+                Guardian's sword.
+            </p>
+
+            <p>
+                Kingsley takes the sword and recognizes the symbol
+                carved into its blade.
+            </p>
+
+            <p>
+                The sword begins to glow, and the darkness around
+                Ravenwood starts to weaken.
+            </p>
+
+            <p>
+                Kingsley looks at you and realizes that the sword
+                may be powerful enough to end the remaining darkness.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="useGuardianSword()">
+                Use the Guardian's Sword
+            </button>
+
+            <button onclick="destroyDarkness()">
+                Destroy the Darkness
+            </button>
+        </div>
+    `;
+}
+
 function useGuardianSword() {
     const game = document.getElementById("level2-game");
 
@@ -2828,6 +3751,36 @@ function destroyDarkness() {
         </div>
     `;
 }
+function returnHomeAfterVictory() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Ravenwood Is Safe</h2>
+
+            <p>
+                You return home after defeating the darkness.
+            </p>
+
+            <p>
+                Ravenwood is safe, and the villagers finally have
+                hope for the future.
+            </p>
+
+            <p>
+                You know that your journey has brought you closer
+                to discovering the truth behind the ancient curse.
+            </p>
+
+            <h3>The final challenge awaits.</h3>
+
+            <button onclick="startLevel6()">
+                Continue to the Final Level
+            </button>
+        </div>
+    `;
+}
+
 function faceFinalTest() {
     const game = document.getElementById("level2-game");
 
@@ -3128,6 +4081,81 @@ function enterTheCrack() {
         </div>
     `;
 }
+function examineTheCrack() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Examine the Crack</h2>
+
+            <p>
+                You carefully examine the strange crack in the
+                ground.
+            </p>
+
+            <p>
+                Dark energy is coming from deep beneath Ravenwood.
+                Ancient symbols surround the opening.
+            </p>
+
+            <p>
+                You realize that the crack leads to an ancient
+                underground temple.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="enterTheCrack()">
+                Enter the Crack
+            </button>
+
+            <button onclick="studyAncientSymbols()">
+                Study the Ancient Symbols
+            </button>
+        </div>
+    `;
+}
+
+function studyAncientSymbols() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>The Ancient Symbols</h2>
+
+            <p>
+                You carefully study the ancient symbols carved
+                around the crack.
+            </p>
+
+            <p>
+                The symbols describe an ancient temple hidden
+                beneath Ravenwood.
+            </p>
+
+            <p>
+                One symbol begins to glow, revealing a hidden
+                entrance beneath the ground.
+            </p>
+
+            <p>
+                You realize the darkness is coming from deep
+                inside the temple.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="openAncientDoor()">
+                Open the Ancient Door
+            </button>
+
+            <button onclick="searchAncientTemple()">
+                Search the Ancient Temple
+            </button>
+        </div>
+    `;
+}
+
 function openAncientDoor() {
     const game = document.getElementById("level2-game");
 
@@ -3179,7 +4207,47 @@ function openAncientDoor() {
             </button>
         </div>
     `;
+}function searchAncientTemple() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Search the Ancient Temple</h2>
+
+            <p>
+                You carefully search the ancient temple.
+            </p>
+
+            <p>
+                Broken statues and old Guardian symbols cover the
+                walls.
+            </p>
+
+            <p>
+                Deep inside the temple, you discover a dark altar
+                surrounded by strange crystals.
+            </p>
+
+            <p>
+                The crystals are producing the dark energy that
+                has been spreading through Ravenwood.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="approachDarkAltar()">
+                Approach the Dark Altar
+            </button>
+
+            <button onclick="destroyDarkCrystal()">
+                Destroy the Dark Crystal
+            </button>
+        </div>
+    `;
 }
+
+
+
 function approachDarkAltar() {
     const game = document.getElementById("level2-game");
 
@@ -3286,6 +4354,158 @@ function destroyDarkCrystal() {
         </div>
     `;
 }
+function searchAncientTemple() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Search the Ancient Temple</h2>
+
+            <p>
+                You carefully search the ancient temple.
+            </p>
+
+            <p>
+                Broken statues and old Guardian symbols cover the
+                walls.
+            </p>
+
+            <p>
+                Deep inside the temple, you discover a dark altar
+                surrounded by strange crystals.
+            </p>
+
+            <p>
+                The crystals are producing the dark energy that
+                has been spreading through Ravenwood.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="approachDarkAltar()">
+                Approach the Dark Altar
+            </button>
+
+            <button onclick="destroyDarkCrystal()">
+                Destroy the Dark Crystal
+            </button>
+        </div>
+    `;
+}
+function containDarkEnergy() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Contain the Dark Energy</h2>
+
+            <p>
+                You realize that destroying the crystal could
+                release the remaining dark energy into Ravenwood.
+            </p>
+
+            <p>
+                Instead, you use the ancient Guardian symbols
+                to contain the energy inside the temple.
+            </p>
+
+            <p>
+                The dark energy begins to shrink as a powerful
+                barrier forms around the crystal.
+            </p>
+
+            <p>
+                Suddenly, you hear Kingsley calling for help
+                from the other side of the temple.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="escapeCollapsingTemple()">
+                Escape the Collapsing Temple
+            </button>
+
+            <button onclick="searchTheRuins()">
+                Search the Ruins
+            </button>
+        </div>
+    `;
+}
+function searchTheRuins() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Search the Ruins</h2>
+
+            <p>
+                You carefully search the ancient ruins
+                while the dark energy fades.
+            </p>
+
+            <p>
+                Beneath the broken stones, you discover
+                a hidden passage leading deeper into the temple.
+            </p>
+
+            <p>
+                You hear Kingsley calling for help.
+                You realize he may still be trapped inside.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="rescueKingsley()">
+                Rescue Kingsley
+            </button>
+
+            <button onclick="returnToTown()">
+                Return to Town
+            </button>
+        </div>
+    `;
+}
+function returnToTown() {
+    const game = document.getElementById("level2-game");
+
+    game.innerHTML = `
+        <div class="game-box">
+            <h2>Return to Town</h2>
+
+            <p>
+                You decide to leave the ancient temple and
+                return to Ravenwood.
+            </p>
+
+            <p>
+                The dark energy has weakened, and the village
+                is finally beginning to feel safe again.
+            </p>
+
+            <p>
+                You arrive in Ravenwood and find the villagers
+                waiting anxiously for news.
+            </p>
+
+            <p>
+                But you cannot stop thinking about Kingsley.
+                You must decide whether to return and rescue him.
+            </p>
+
+            <h3>What will you do?</h3>
+
+            <button onclick="rescueKingsley()">
+                Go Back and Rescue Kingsley
+            </button>
+
+            <button onclick="completeFinalMission()">
+                Complete the Final Mission
+            </button>
+        </div>
+    `;
+}
+
+
 
 function finishDestroyingCrystal() {
     const game = document.getElementById("level2-game");
@@ -3517,6 +4737,5 @@ function restartGame() {
     location.reload();
 }
  </script>
-<script src="game.js"></script>
 </body>
 </html>
