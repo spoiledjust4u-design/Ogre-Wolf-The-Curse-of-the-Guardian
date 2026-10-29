@@ -705,3 +705,146 @@ aspect-ratio: 16 / 9;
 border-radius: 6px;
     }
 }
+
+#growlButton {
+background: #1a1a1a;
+color: #f5c16c;
+border: 2px solid #e74c3c;
+border-radius: 8px;
+padding: 14px 24px;
+font-size: 17px;
+font-weight: bold;
+cursor: pointer;
+margin: 20px auto;
+display: block;
+transition: all 0.3s ease;
+}
+
+#growlButton:hover,
+#growlButton:focus {
+background: #e74c3c;
+color: #ffffff;
+box-shadow: 0 0 18px #e74c3c;
+outline: 2px solid #f5c16c;
+outline-offset: 4px;
+}
+
+#windButton {
+background: #1a1a1a;
+color: #a8d5a2;
+border: 2px solid #34495e;
+border-radius: 8px;
+padding: 14px 24px;
+font-size: 17px;
+font-weight: bold;
+cursor: pointer;
+margin: 12px auto;
+display: block;
+transition: all 0.3s ease;
+}
+
+#windButton:hover,
+#windButton:focus {
+background: #34495e;
+color: #ffffff;
+box-shadow: 0 0 18px #a8d5a2;
+outline: 2px solid #a8d5a2;
+outline-offset: 4px;
+}
+
+.level2-page {
+min-height: 100vh;
+background-image:
+linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)),
+url("images/06_dark_forest.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+color: #ffffff;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.level2-page h1,
+.level2-page h2,
+.level2-page p {
+text-shadow: 2px 2px 5px #000000;
+}
+
+.level2-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.level-background {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Smaller, transparent game box */
+.level-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.65);
+    border: 2px solid #8e44ad;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Keep level headings readable */
+.level-container h1 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    overflow-wrap: break-word;
+}
+
+.level-container h2 {
+    font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+}
+
+/* Reduce the size of pictures inside the game box */
+.level-image {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    max-height: 200px;
+    object-fit: contain;
+    margin: 10px auto;
+}
+
+/* Make buttons comfortable to use */
+.level-container button,
+.level-container .game-button {
+    max-width: 100%;
+    margin: 8px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Allow the layout to fit smaller screens */
+@media (max-width: 600px) {
+    .level-background {
+        padding: 12px 8px;
+    }
+
+    .level-container {
+        width: 96%;
+        padding: 12px;
+    }
+
+    .level-image {
+        max-height: 160px;
+    }
+}

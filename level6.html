@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 6 - The Final Confrontation</title><link rel="stylesheet" href="style.css">
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        color: #eee;
+        font-family: Arial, sans-serif;
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+            url("images/hollow_king.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+
+    header {
+        padding: 10px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+    header h1 {
+        font-size: clamp(22px, 4vw, 34px);
+        margin: 8px 0;
+    }
+
+    .game-container {
+        width: 90%;
+        max-width: 650px;
+        margin: 20px auto;
+        padding: 18px;
+        box-sizing: border-box;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.72);
+        border: 2px solid #8e44ad;
+        border-radius: 12px;
+    }
+
+    .game-container p {
+        line-height: 1.6;
+    }
+
+    .game-container button,
+    .game-container a {
+        display: inline-block;
+        margin: 8px;
+        padding: 12px 16px;
+        max-width: 100%;
+        color: white;
+        background: #6c3483;
+        border: 2px solid #d7bde2;
+        border-radius: 8px;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .game-container button:focus,
+    .game-container a:focus {
+        outline: 3px solid #f5c16c;
+        outline-offset: 3px;
+    }
+
+    #game-message {
+        min-height: 50px;
+        margin: 18px 0;
+        font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+        .game-container {
+            width: 95%;
+            padding: 12px;
+        }
+    }
+</style>
+
+</head><body>
+    <header>
+        <h1>Level 6: The Final Confrontation</h1>
+        <p>The fate of Ravenwood rests in your hands!</p>
+    </header><main class="game-container">
+    <h2>Face the Hollow King</h2>
+
+    <p>
+        You have reached the heart of the darkness.
+        The Hollow King stands before you, and the curse
+        that transformed Kingsley must finally be broken.
+    </p>
+
+    <p>
+        Choose carefully. Your courage and the clues you
+        discovered will determine Ravenwood's fate.
+    </p>
+
+    <div id="game-message" aria-live="polite">
+        The final battle is about to begin. What will you do?
+    </div>
+
+    <button onclick="makeFinalChoice('fight')">
+        ⚔️ Face the Hollow King
+    </button>
+
+    <button onclick="makeFinalChoice('protect')">
+        🛡️ Protect Ravenwood
+    </button>
+
+    <button onclick="makeFinalChoice('curse')">
+        🔮 Break the Curse
+    </button>
+
+    <div id="ending-options" hidden>
+        <h2 id="ending-title">The Ending</h2>
+        <p id="ending-message"></p>
+        <button onclick="restartLevel()">Play Level 6 Again</button>
+        <br>
+        <a href="levels.html">Return to Level Selection</a>
+        <br>
+        <a href="index.html">Return Home</a>
+    </div>
+</main>
+
+<script>
+    let choicesMade = 0;
+    let finalChoiceMade = false;
+
+    function makeFinalChoice(choice) {
+        if (finalChoiceMade) {
+            return;
+        }
+
+        const message = document.getElementById("game-message");
+
+        if (choice === "fight") {
+            message.textContent =
+                "You stand bravely against the Hollow King. His darkness shakes the ground, but you refuse to surrender.";
+        } else if (choice === "protect") {
+            message.textContent =
+                "You protect Ravenwood and the missing children. Your courage weakens the Hollow King's power.";
+        } else if (choice === "curse") {
+            message.textContent =
+                "You discover the source of the curse. A powerful light begins to break through the darkness.";
+        }
+
+        choicesMade++;
+
+        if (choicesMade >= 2) {
+            showEnding(choice);
+        }
+    }
+
+    function showEnding(choice) {
+        finalChoiceMade = true;
+
+        const title = document.getElementById("ending-title");
+        const ending = document.getElementById("ending-message");
+
+        if (choice === "curse") {
+            title.textContent = "The Curse Is Broken!";
+            ending.textContent =
+                "The darkness disappears. Kingsley is freed from the curse, the missing children return home, and Ravenwood is saved!";
+        } else if (choice === "protect") {
+            title.textContent = "Ravenwood Is Saved!";
+            ending.textContent =
+                "Your bravery protects the village. The Hollow King's power fades, the children are rescued, and hope returns to Ravenwood.";
+        } else {
+            title.textContent = "The Final Battle!";
+            ending.textContent =
+                "You face the Hollow King without fear. With your final act of courage, the darkness falls and Ravenwood is finally free!";
+        }
+
+        document.getElementById("ending-options").hidden = false;
+        document.getElementById("game-message").textContent =
+            "You have completed all six levels of Ogre-Wolf!";
+    }
+
+    function restartLevel() {
+        choicesMade = 0;
+        finalChoiceMade = false;
+
+        document.getElementById("game-message").textContent =
+            "The final battle is about to begin. What will you do?";
+
+        document.getElementById("ending-options").hidden = true;
+    }
+</script>
+<script src="sounds/music.js"></script>
+</body>
+</html>

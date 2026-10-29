@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Level 3 - The Hollow Kingdom | Ogre-Wolf</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        color: white;
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.45),
+                            rgba(0, 0, 0, 0.70)),
+            url("images/hollow-kingdom.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .game-container {
+        max-width: 850px;
+        margin: 30px auto;
+        padding: 25px;
+        background: rgba(15, 15, 15, 0.88);
+        border: 2px solid #f5c16c;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #f5c16c;
+    }
+
+    h2 {
+        color: #e74c3c;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    button, .game-link {
+        display: inline-block;
+        margin: 10px;
+        padding: 14px 20px;
+        background: #34495e;
+        color: white;
+        border: 2px solid #f5c16c;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    button:hover, button:focus,
+    .game-link:hover, .game-link:focus {
+        background: #e74c3c;
+        outline: 3px solid white;
+    }
+
+    #game-message {
+        margin-top: 25px;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 8px;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #f5c16c;
+    }
+    
+
+</style>
+
+</head>
+<body>
+<div class="level-image">
+        img src="images/hollow_king.png"
+        alt="The terrifying Hollow King"
+        class=character-image">
+    </div>
+
+    
+    <div class="game-container">
+        <h1>Ogre-Wolf: The Curse of the Guardian</h1>
+
+<h2>Level 3: The Hollow Kingdom</h2>
+
+<p>
+    The four teenagers have survived the Dark Forest
+    and uncovered the secrets hidden inside Kingsley's Den.
+    Now they have discovered a passage leading into the
+    forgotten Hollow Kingdom.
+</p>
+
+<p>
+    An ancient darkness hangs over the ruined kingdom.
+    Strange symbols glow on the stone walls, and a distant
+    voice whispers the name of the missing children.
+</p>
+
+<h2>What Will You Do?</h2>
+
+<p id="game-message">
+    The teenagers stand before two mysterious passages.
+    One glows with a strange golden light. The other
+    disappears into complete darkness.
+</p>
+
+<div id="game-choices">
+    <button onclick="choosePath('golden')">
+        Investigate the Golden Passage
+    </button>
+
+    <button onclick="choosePath('dark')">
+        Enter the Dark Passage
+    </button>
+</div>
+
+<script>
+    function choosePath(choice) {
+        const message = document.getElementById("game-message");
+        const choices = document.getElementById("game-choices");
+
+        if (choice === "golden") {
+            message.textContent =
+                "The golden symbols reveal an ancient warning. " +
+                "The Hollow King created the curse that transformed " +
+                "Kingsley into the Ogre-Wolf. You discover a clue " +
+                "that may help free the Guardian.";
+        } else {
+            message.textContent =
+                "The teenagers enter the dark passage. A chilling " +
+                "roar shakes the walls, and shadowy figures appear. " +
+                "They escape with a mysterious key to the kingdom.";
+        }
+
+        choices.innerHTML = `
+            <button onclick="continueGame()">
+                Continue to Level 4
+            </button>
+        `;
+    }
+
+    function continueGame() {
+        window.location.href = "level4.html";
+    }
+</script>
+
+<a href="levels.html" class="back-link">
+    Return to Level Progression
+</a>
+
+</div>
+<script src="sounds/music.js"></script>
+</body>
+
+</html>

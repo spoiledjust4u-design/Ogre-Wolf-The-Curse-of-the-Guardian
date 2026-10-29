@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Level 2 - Kingsley's Den | Ogre-Wolf</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.15),
+                    rgba(0, 0, 0, 0.30)
+                ),
+                url("images/07_kingsleys_den.png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.55);
+            border-bottom: 2px solid #e74c3c;
+        }
+
+        h1, h2 {
+            color: #f5c16c;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin: 5px;
+        }
+
+        header h2 {
+            margin: 5px;
+        }
+
+        header p {
+            margin: 5px;
+        }
+
+        .game-container {
+            width: 90%;
+            max-width: 650px;
+            margin: 15px auto;
+            padding: 15px;
+
+            background: rgba(20, 20, 20, 0.65);
+
+            border: 2px solid #34495e;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .danger-counter {
+            color: #ff8a80;
+            font-size: 21px;
+            font-weight: bold;
+            margin: 12px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            margin: 10px auto;
+            padding: 12px;
+
+            background: #2c3e50;
+            color: white;
+            border: 2px solid #f5c16c;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus {
+            background: #e74c3c;
+            outline: 3px solid #f5c16c;
+            outline-offset: 3px;
+        }
+
+        #storyText {
+            min-height: 70px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.40);
+            border-radius: 8px;
+        }
+
+        #continueButton {
+            display: none;
+            background: #176b37;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 12px;
+            color: #f5c16c;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 23px;
+            }
+
+            .game-container {
+                width: 94%;
+                margin: 10px auto;
+                padding: 12px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐺 Ogre-Wolf: The Curse of the Guardian</h1>
+    <h2>Level 2: Kingsley's Den</h2>
+    <p>The deeper you go, the closer the danger gets.</p>
+</header>
+
+<main class="game-container">
+
+    <h2>Your Mission</h2>
+
+    <p>
+        You have left Ravenwood Village behind. The footprints
+        lead into a dark forest where the trees block out the moon.
+        Somewhere ahead, something is watching you.
+    </p>
+
+    <p>
+        Find the hidden trail to Kingsley's Den without allowing
+        fear to control your decisions.
+    </p>
+
+    <div class="danger-counter">
+        Danger Level: <span id="dangerCount">0</span> / 2
+    </div>
+
+    <div id="storyText" aria-live="polite">
+        You hear a branch snap in the darkness. A trail of footprints
+        disappears between the trees. Will you follow it or hide?
+    </div>
+
+    <button type="button" onclick="followFootprints()">
+        👣 Follow the Footprints
+    </button>
+
+    <button type="button" onclick="hideFromTheNoise()">
+        🌲 Hide and Investigate the Noise
+    </button>
+
+    <button type="button" id="continueButton"
+            onclick="continueToLevel3()">
+        🐺 Continue to Level 3: Kingsley's Den
+    </button>
+
+    <p id="missionStatus" aria-live="polite"></p>
+
+    <a class="back-link" href="level1.html">
+        Return to Level 1
+    </a>
+
+</main>
+
+<script>
+    let danger = 0;
+    let choicesMade = 0;
+
+    function makeChoice(message, dangerIncrease) {
+        if (choicesMade >= 2) {
+            document.getElementById("storyText").textContent =
+                "You have explored this part of the forest. " +
+                "Continue to Kingsley's Den when you're ready.";
+            return;
+        }
+
+        choicesMade++;
+        danger += dangerIncrease;
+
+        document.getElementById("dangerCount").textContent = danger;
+        document.getElementById("storyText").textContent = message;
+
+        if (choicesMade >= 2) {
+            document.getElementById("missionStatus").textContent =
+                "You discovered the hidden trail! " +
+                "The entrance to Kingsley's Den is ahead.";
+
+            document.getElementById("continueButton").style.display =
+                "block";
+        }
+    }
+
+    function followFootprints() {
+        makeChoice(
+            "You follow the footprints beneath twisted branches. " +
+            "A massive shadow moves between the trees, but you " +
+            "discover a hidden trail leading deeper into the forest.",
+            1
+        );
+    }
+
+    function hideFromTheNoise() {
+        makeChoice(
+            "You hide behind an old tree and listen carefully. " +
+            "Heavy footsteps pass nearby. Once the forest grows quiet, " +
+            "you discover markings pointing toward Kingsley's Den.",
+            0
+        );
+    }
+
+    function continueToLevel3() {
+        window.location.href = "level3.html";
+    }
+</script>
+<script src="sounds/music.js"></script>
+</body>
+</html>

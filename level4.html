@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Level 4 - Hollow Kingdom | Ogre-Wolf</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #111;
+        }
+
+        .level-background {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px 10px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.20),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("images/03_kingsley_ogre_wolf.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+        .level-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    border: 2px solid #8e44ad;
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+        .level-container h1 {
+            color: #d7a7ff;
+            font-size: 2.2em;
+        }
+
+        .level-container h2 {
+            color: #f5c16c;
+        }
+
+        .level-image {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            max-height: 220px;
+            height: auto;
+            object-fit: contain;
+            margin: 10px auto;
+    
+        }
+
+        .game-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 14px 20px;
+            background-color: #5b2c6f;
+            color: white;
+            border: 2px solid #d7a7ff;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .game-button:hover,
+        .game-button:focus {
+            background-color: #8e44ad;
+            outline: 3px solid white;
+        }
+
+        #game-message {
+            margin-top: 20px;
+            padding: 15px;
+            color: #fff;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #f5c16c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="level-background">
+
+        <main class="level-container">
+
+            <h1>Ogre-Wolf: The Curse of the Guardian</h1>
+
+            <h2>Level 4: The Final Guardian</h2>
+
+            <img
+                src="images/hollow-king.png"
+                alt="The mysterious Hollow King in his dark kingdom"
+                class="level-image"
+            >
+
+            <p>
+                The teenagers have entered the Hollow Kingdom.
+                The air is cold, the halls are silent, and a strange
+                darkness surrounds them.
+            </p>
+
+            <p>
+                Somewhere inside the kingdom, the Hollow King guards
+                the secrets behind the curse. The teenagers must choose
+                their next move carefully.
+            </p>
+
+            <h2>What will you do?</h2>
+
+            <button class="game-button" onclick="choosePath('throne')">
+                👑 Approach the Throne
+            </button>
+
+            <button class="game-button" onclick="choosePath('secret')">
+                🔎 Search for a Secret Passage
+            </button>
+
+            <button class="game-button" onclick="choosePath('hide')">
+                🌑 Hide from the Guards
+            </button>
+
+            <div id="game-message" aria-live="polite">
+                Choose your next move to continue the adventure.
+            </div>
+
+            <a class="back-link" href="levels.html">
+                ← Back to Level Selection
+            </a>
+
+        </main>
+    </div>
+
+    <script>
+        function choosePath(choice) {
+            const message = document.getElementById("game-message");
+
+            if (choice === "throne") {
+                message.innerHTML =
+                    "The Hollow King rises from his throne! " +
+                    "His glowing eyes reveal that he knows why you came. " +
+                    "You must prepare for what comes next.";
+            }
+
+            else if (choice === "secret") {
+                message.innerHTML =
+                    "You discover an ancient passage behind a stone wall. " +
+                    "Inside, you find strange symbols that reveal a clue " +
+                    "about the Guardian's curse.";
+            }
+
+            else if (choice === "hide") {
+                message.innerHTML =
+                    "You hide behind a broken stone pillar as the guards " +
+                    "pass by. You discover a safer route through the kingdom.";
+            }
+
+            const nextButton = document.getElementById("next-level");
+
+            if (!nextButton) {
+                const button = document.createElement("a");
+
+                button.id = "next-level";
+                button.href = "level5.html";
+                button.className = "game-button";
+                button.textContent = "Continue to Level 5 →";
+
+                message.appendChild(document.createElement("br"));
+                message.appendChild(button);
+            }
+        }
+    </script>
+<script src="sounds/music.js"></script>
+</body>
+</html>

@@ -1,10 +1,6 @@
 let clues = 0;
 let childrenFound = 0;
 
-// ==========================================
-// LEVEL 1 - THE DARK FOREST
-// ==========================================
-
 function startGame() {
     const gameArea = document.getElementById("game-area");
 
@@ -249,17 +245,12 @@ function endFirstMission() {
     `;
 }
 
-
-// ==========================================
-// LEVEL 2 - THE DARK FOREST
-// ==========================================
-
 function startLevel2() {
     const gameArea = document.getElementById("game-area");
 
     gameArea.innerHTML = `
         <div class="game-panel">
-            <h2>Level 2: The Dark Forest</h2>
+            <h2>Level 1: The Dark Forest</h2>
 
             <p>
                 You enter the deepest part of the forest.
@@ -545,4 +536,88 @@ function finishLevel2() {
             </a>
         </div>
     `;
+}
+
+function startLevel3() {
+const gameArea = document.getElementById("game-area");
+if (!gameArea) return;
+
+gameArea.innerHTML = `
+    <div class="game-panel">
+        <h2>Level 2: Kingsley's Den</h2>
+        <p>You have discovered Kingsley's hidden den. Strange markings cover the walls, and clues reveal the truth about the cursed Guardian.</p>
+        <h3>What will you investigate?</h3>
+        <button onclick="alert('You discover strange markings that reveal part of Kingsley’s past.')">Examine the Markings</button>
+        <button onclick="alert('You discover footprints leading deeper into the den.')">Follow the Footprints</button>
+        <button onclick="startLevel4()">Continue to Level 3: Hollow Kingdom</button>
+    </div>
+`;
+
+}
+
+function startLevel4() {
+const gameArea = document.getElementById("game-area");
+if (!gameArea) return;
+
+gameArea.innerHTML = `
+    <div class="game-panel">
+        <h2>Level 3: Hollow Kingdom</h2>
+        <p>You enter the Hollow Kingdom, where ancient darkness hides the source of the curse.</p>
+        <h3>What will you do?</h3>
+        <button onclick="alert('You uncover an ancient symbol connected to the curse.')">Investigate the Ancient Symbol</button>
+        <button onclick="alert('You discover a hidden passage through the kingdom.')">Search for a Passage</button>
+        <button onclick="startLevel5()">Continue to Level 4: The Final Guardian</button>
+    </div>
+`;
+
+}
+
+function startLevel5() {
+const gameArea = document.getElementById("game-area");
+if (!gameArea) return;
+
+gameArea.innerHTML = `
+    <div class="game-panel">
+        <h2>Level 4: The Final Guardian</h2>
+        <p>The Guardian stands before you. Use the clues you have gathered to face this dangerous encounter.</p>
+        <h3>How will you proceed?</h3>
+        <button onclick="alert('Your clues help you understand the Guardian’s weakness.')">Use Your Clues</button>
+        <button onclick="alert('You cautiously search for another way forward.')">Find Another Way</button>
+        <button onclick="startLevel6()">Continue to Level 5: The Final Darkness</button>
+    </div>
+`;
+
+}
+
+function startLevel6() {
+const gameArea = document.getElementById("game-area");
+if (!gameArea) return;
+
+gameArea.innerHTML = `
+    <div class="game-panel">
+        <h2>Level 5: The Final Darkness</h2>
+        <p>You reach the heart of the darkness. The truth behind the curse is finally within reach.</p>
+        <h3>What will you do?</h3>
+        <button onclick="alert('You uncover the secret behind the ancient curse.')">Uncover the Secret</button>
+        <button onclick="alert('You prepare to confront the evil controlling the darkness.')">Prepare for the Final Battle</button>
+        <button onclick="startLevel7()">Continue to Level 6: The Final Confrontation</button>
+    </div>
+`;
+
+}
+
+function startLevel7() {
+const gameArea = document.getElementById("game-area");
+if (!gameArea) return;
+
+gameArea.innerHTML = `
+    <div class="game-panel">
+        <h2>Level 6: The Final Confrontation</h2>
+        <p>You face the ultimate evil threatening Ravenwood. Everything you have learned will determine the fate of the village and the missing children.</p>
+        <h3>What will you do?</h3>
+        <button onclick="alert('You use everything you learned to confront the darkness and save Ravenwood!')">Confront the Darkness</button>
+        <button onclick="alert('You have completed the final level of Ogre-Wolf: The Curse of the Guardian!')">Complete the Adventure</button>
+    </div>
+`;
+
 }

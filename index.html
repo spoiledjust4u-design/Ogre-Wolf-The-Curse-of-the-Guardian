@@ -10,12 +10,41 @@
         }
     </style>
     <link rel="stylesheet" href="style.css">
-</head><body><header>
+
+</head>
+<style>
+
+#music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #1a1a1a;
+    color: #f5c16c;
+    border: 2px solid #f5c16c;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+</style>
+<body>
+    <header>
     <h1>Ogre-Wolf: The Curse of the Guardian</h1>
-    <img src="images/ogre-wolf-characters.png"
-    alt="The four teenagers facing the mysterious Ogre-Wolf in Ravenwood"
-    class="story-image">
     <p class="tagline">Some monsters are not what they seem.</p>
+    <div class="ogre-wolf-feature">
+    <img src="images/ogre-wolf-character.png"
+         alt="Kingsley, the cursed Ogre-Wolf Guardian"
+         class="story-image">
+    <p>Meet Kingsley, the cursed Guardian of Ravenwood.</p>
+</div>
+<button id="growlButton" type="button">
+    🐺 Hear the Ogre-Wolf Growl
+</button>
+<button id="windButton" type="button">
+    🌲 Play Forest Wind
+</button>
 </header>
 
 <nav>
@@ -53,7 +82,7 @@
             <strong>Something much more dangerous is hiding in the darkness.</strong>
         </p>
 
-        <a href="#" class="button"onclick="startGame(); return false;">Begin the Journey</a>
+        <a href="levels.html" class="button">Begin the Journey</a>
         <div id="game-area"></div>
     </section>
 
@@ -164,6 +193,96 @@
 </footer>
 
 <script src="game.js"></script>
+<script>
+const growlButton = document.getElementById("growlButton");
 
+growlButton.addEventListener("click", function () {
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = "sawtooth";
+    oscillator.frequency.setValueAtTime(100, audioContext.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(
+        35,
+        audioContext.currentTime + 1.5
+    );
+
+    gain.gain.setValueAtTime(0.001, audioContext.currentTime);
+    gain.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.15);
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audioContext.currentTime + 1.8
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 1.8);
+
+    oscillator.onended = function () {
+        audioContext.close();
+    };
+});
+</script>
+<script>
+const windButton = document.getElementById("windButton");
+
+let windContext = null;
+let windSource = null;
+let windGain = null;
+let windFilter = null;
+
+windButton.addEventListener("click", async function () {
+    if (windSource) {
+        windSource.stop();
+        windSource.disconnect();
+        windSource = null;
+
+        windButton.textContent = "🌲 Play Forest Wind";
+        return;
+    }
+
+    windContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    await windContext.resume();
+
+    const bufferSize = 2 * windContext.sampleRate;
+    const buffer = windContext.createBuffer(
+        1,
+        bufferSize,
+        windContext.sampleRate
+    );
+
+    const data = buffer.getChannelData(0);
+
+    for (let i = 0; i < bufferSize; i++) {
+        data[i] = Math.random() * 2 - 1;
+    }
+
+    windSource = windContext.createBufferSource();
+    windSource.buffer = buffer;
+    windSource.loop = true;
+
+    windFilter = windContext.createBiquadFilter();
+    windFilter.type = "lowpass";
+    windFilter.frequency.value = 350;
+
+    windGain = windContext.createGain();
+    windGain.gain.value = 0.08;
+
+    windSource.connect(windFilter);
+    windFilter.connect(windGain);
+    windGain.connect(windContext.destination);
+
+    windSource.start();
+
+    windButton.textContent = "🌲 Stop Forest Wind";
+});
+</script>
+
+<script src="sounds/music.js"></script>
 </body>
 </html>

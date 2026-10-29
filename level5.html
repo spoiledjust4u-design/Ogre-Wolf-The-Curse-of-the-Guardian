@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Level 5 - The Final Darkness | Ogre-Wolf</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.15),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("images/13_final_showdown.png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.55);
+            border-bottom: 2px solid #8e44ad;
+        }
+
+        header h1 {
+            color: #f5c16c;
+            font-size: 28px;
+            margin: 5px;
+        }
+
+        header h2 {
+            color: #d7a7ff;
+            margin: 5px;
+        }
+
+        header p {
+            margin: 5px;
+        }
+
+        .game-container {
+            width: 90%;
+            max-width: 650px;
+            margin: 15px auto;
+            padding: 15px;
+
+            background: rgba(10, 10, 15, 0.65);
+
+            border: 2px solid #8e44ad;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .game-container h2 {
+            color: #d7a7ff;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .darkness-counter {
+            color: #d7a7ff;
+            font-size: 21px;
+            font-weight: bold;
+            margin: 12px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            margin: 10px auto;
+            padding: 12px;
+
+            background: #30213d;
+            color: white;
+            border: 2px solid #d7a7ff;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus {
+            background: #6c3483;
+            outline: 3px solid #f5c16c;
+            outline-offset: 3px;
+        }
+
+        #storyText {
+            min-height: 70px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.40);
+            border-radius: 8px;
+        }
+
+        #continueButton {
+            display: none;
+            background: #176b37;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 12px;
+            color: #f5c16c;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 23px;
+            }
+
+            .game-container {
+                width: 94%;
+                margin: 10px auto;
+                padding: 12px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐺 Ogre-Wolf: The Curse of the Guardian</h1>
+    <h2>Level 5: The Final Darkness</h2>
+    <p>The darkest secret is waiting to be uncovered.</p>
+</header>
+
+<main class="game-container">
+
+    <h2>Your Mission</h2>
+
+    <p>
+        The teenagers have entered a forgotten realm where the sky
+        is swallowed by darkness. The air trembles with ancient magic,
+        and a strange force threatens to consume everything.
+    </p>
+
+    <p>
+        The clues gathered from the forest, Kingsley's Den,
+        and the Hollow Kingdom point toward the source of the curse.
+        You must uncover the truth before the darkness becomes unstoppable.
+    </p>
+
+    <div class="darkness-counter">
+        Darkness Discovered: <span id="darknessCount">0</span> / 2
+    </div>
+
+    <div id="storyText" aria-live="polite">
+        A cold wind sweeps across the ruined landscape.
+        Strange symbols glow among the stones.
+        How will you investigate the darkness?
+    </div>
+
+    <button type="button" onclick="investigateSymbols()">
+        🔮 Investigate the Glowing Symbols
+    </button>
+
+    <button type="button" onclick="followTheLight()">
+        🕯️ Follow the Mysterious Light
+    </button>
+
+    <button type="button" onclick="faceTheDarkness()">
+        🌑 Approach the Source of Darkness
+    </button>
+
+    <button type="button" id="continueButton"
+            onclick="continueToLevel6()">
+        ⚔️ Continue to Level 6: The Final Confrontation
+    </button>
+
+    <p id="missionStatus" aria-live="polite"></p>
+
+    <a class="back-link" href="levels.html">
+        ← Return to Level Selection
+    </a>
+
+</main>
+
+<script>
+    let discoveries = 0;
+    let choicesMade = 0;
+
+    function makeDiscovery(message) {
+        if (choicesMade >= 2) {
+            document.getElementById("storyText").textContent =
+                "You have uncovered the important clues. " +
+                "Prepare for the Final Confrontation.";
+            return;
+        }
+
+        choicesMade++;
+        discoveries++;
+
+        document.getElementById("darknessCount").textContent =
+            discoveries;
+
+        document.getElementById("storyText").textContent = message;
+
+        if (choicesMade >= 2) {
+            document.getElementById("missionStatus").textContent =
+                "You have uncovered the secrets of the Final Darkness!";
+
+            document.getElementById("continueButton").style.display =
+                "block";
+        }
+    }
+
+    function investigateSymbols() {
+        makeDiscovery(
+            "The glowing symbols reveal an ancient warning. " +
+            "The curse was created to imprison a powerful force, " +
+            "but something has begun to break its chains."
+        );
+    }
+
+    function followTheLight() {
+        makeDiscovery(
+            "You follow the mysterious light through the ruins. " +
+            "It reveals a hidden path leading toward the heart " +
+            "of the darkness."
+        );
+    }
+
+    function faceTheDarkness() {
+        makeDiscovery(
+            "You approach the swirling darkness. A vision reveals " +
+            "that the final confrontation will determine the fate " +
+            "of Ravenwood and the missing children."
+        );
+    }
+
+    function continueToLevel6() {
+        window.location.href = "level6.html";
+    }
+</script>
+<script src="sounds/music.js"></script>
+</body>
+</html>

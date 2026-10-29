@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Level 1 - The Dark Forest | Ogre-Wolf</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.15),
+                                rgba(0, 0, 0, 0.30)),
+            url("images/06_dark_forest.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.55);
+            border-bottom: 2px solid #e74c3c;
+        }
+
+        h1 {
+            color: #f5c16c;
+            font-size: 28px;
+            margin: 5px;
+        }
+
+        .game-container {
+            width: 90%;
+            max-width: 850px;
+            margin: 15px auto;
+            padding: 15px;
+            background: rgba(20, 20, 20, 0.65);
+            border: 2px solid #34495e;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #f5c16c;
+            margin: 5px;
+        }
+
+        p {
+            margin: 5px;
+        }
+
+        .clue-counter {
+            color: #f5c16c;
+            font-size: 21px;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            margin: 15px auto;
+            padding: 16px;
+            background: #2c3e50;
+            color: white;
+            border: 2px solid #f5c16c;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus {
+            background: #e74c3c;
+            outline: 3px solid #f5c16c;
+            outline-offset: 3px;
+        }
+
+        #storyText {
+            min-height: 75px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        #continueButton {
+            display: none;
+            background: #176b37;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px;
+            color: #f5c16c;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 25px;
+            }
+
+            .game-container {
+                margin: 15px;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐺 Ogre-Wolf: The Curse of the Guardian</h1>
+    <h2>Level 1: The Dark Forest</h2>
+    <p>Every clue brings you closer to the truth.</p>
+</header>
+
+<main class="game-container">
+
+    <h2>Your Mission</h2>
+
+    <p>
+    The four teenagers have entered the Dark Forest in search
+    of six missing children. Towering trees block the sunlight,
+    and strange noises echo through the woods.
+</p>
+    <p>
+    Strange footprints disappear into the shadows, and enormous
+    claw marks scar the trees. Something dangerous is watching
+    from deep within the forest. You must investigate the clues
+    to discover where the missing children were taken.
+</p>
+
+    <div class="clue-counter">
+        Clues Found: <span id="clueCount">0</span> / 2
+    </div>
+
+    <div id="storyText" aria-live="polite">
+    The forest grows darker as you move between the trees.
+    You discover a trail of unusual footprints and deep claw
+    marks carved into a nearby tree. Which clue will you
+    investigate first?
+</div>
+
+    <button type="button" onclick="investigateFootprints()">
+        👣 Investigate the Footprints
+    </button>
+
+    <button type="button" onclick="investigateClawMarks()">
+        🔎 Examine the Strange Claw Marks
+    </button>
+
+    <button type="button" id="continueButton"
+            onclick="continueToLevel2()">
+        🌲 Continue to Level 2: The Dark Forest
+    </button>
+
+    <p id="missionStatus" aria-live="polite"></p>
+
+    <a class="back-link" href="levels.html">
+        Return to Level Selection
+    </a>
+
+</main>
+
+<script>
+    let clues = 0;
+
+    function collectClue(message) {
+        if (clues >= 2) {
+            document.getElementById("storyText").textContent =
+                "You have gathered all the clues available in the village.";
+            return;
+        }
+
+        clues++;
+
+        document.getElementById("clueCount").textContent = clues;
+        document.getElementById("storyText").textContent = message;
+
+        if (clues >= 2) {
+            document.getElementById("missionStatus").textContent =
+                "Mission complete! You discovered both clues.";
+
+            document.getElementById("continueButton").style.display =
+                "block";
+        }
+    }
+
+    function investigateFootprints() {
+        collectClue(
+            "The footprints lead toward the edge of the village. " +
+            "Their unusual size suggests that something enormous " +
+            "passed through Ravenwood. You found a clue!"
+        );
+    }
+
+    function investigateClawMarks() {
+        collectClue(
+            "Deep claw marks cover the side of an abandoned building. " +
+            "Nearby, you discover a torn piece of dark fabric. " +
+            "You found another clue!"
+        );
+    }
+
+    function continueToLevel2() {
+        window.location.href = "level2.html";
+    }
+</script>
+<script src="sounds/music.js"></script>
+</body>
+</html>

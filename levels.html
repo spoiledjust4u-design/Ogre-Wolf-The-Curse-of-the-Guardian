@@ -27,8 +27,7 @@
 
     <div class="container">
 
-        <h2>Level Progression</h2>
-
+        
         <p>
             The four teenagers must travel through dangerous locations
             surrounding Ravenwood to find the six missing children.
@@ -46,44 +45,44 @@
 
             <tr>
                 <td>1</td>
-                <td>Ravenwood Village</td>
+                <td>The Dark Forest</td>
                 <td>Easy</td>
-                <td>Gather clues about the missing children.</td>
+                <td>Follow clues through the dark forest to find the missing children.</td>
             </tr>
 
             <tr>
                 <td>2</td>
-                <td>The Dark Forest</td>
+                <td>Kingsley's Den</td>
                 <td>Easy</td>
-                <td>Follow the children's trail and uncover the truth about the Ogre-Wolf.</td>
+                <td>Investigate Kingsley's hideout and uncover the truth about the cursed Guardian.</td>
             </tr>
 
             <tr>
                 <td>3</td>
-                <td>Kingsley's Den</td>
+                <td>Hollow Kingdom/td>
                 <td>Medium</td>
-                <td>Discover Kingsley's secret and find the Guardian's key.</td>
+                <td>Explore the Hollow Kingdom and discover the source of the ancient darkness.</td>
             </tr>
 
             <tr>
                 <td>4</td>
-                <td>Hollow Kingdom</td>
+                <td>The Final Guardian</td>
                 <td>Medium</td>
-                <td>Discover the ancient kingdom beneath Ravenwood and uncover the Hollow King's secrets.</td>
+                <td>Face the Guardian and use the clues you've gathered to survive.</td>
             </tr>
 
             <tr>
                 <td>5</td>
-                <td>The Final Guardian</td>
+                <td>The Final Darkness</td>
                 <td>Hard</td>
-                <td>Find the Guardian Sword, defeat the darkness, and prove you are worthy Guardians.</td>
+                <td>Enter the heart of the darkness and uncover the secret behind the curse.</td>
             </tr>
 
             <tr>
                 <td>6</td>
-                <td>The Final Darkness</td>
+                <td>The Final Confrontation</td>
                 <td>Hard</td>
-                <td>Destroy the ancient darkness beneath Ravenwood and complete the final mission.</td>
+                <td>Face the ultimate evil and decide the fate of Ravenwood.</td>
             </tr>
 
         </table>
@@ -96,22 +95,35 @@
     </p>
 
     <div class="level-buttons">
-        <a href="index.html"class="level-button">Level 1</a>
-        <button onclick="startLevel2()">Level 2</button>
-        <button onclick="startLevel3()">Level 3</button>
-        <button onclick="startLevel4()">Level 4</button>
-        <button onclick="continueToLevel5()">Level 5</button>
-        <button onclick="startLevel6()">Level 6</button>
-    </div>
+
+    <a href="level1.html" class="level-button">
+        Level 1: The Dark Forest
+    </a>
+
+    <a href="level2.html" class="level-button">
+        Level 2: Kingsley's Den
+    </a>
+
+    <a href="level3.html" class="level-button">
+        Level 3: Hollow Kingdom
+    </a>
+
+    <a href="level4.html" class="level-button">
+        Level 4: The Final Guardian
+    </a>
+
+    <a href="level5.html" class="level-button">
+        Level 5: The Final Darkness
+    </a>
+
+    <a href="level6.html" class="level-button">
+        Level 6: The Final Confrontation
+    </a>
+
+</div>
 </section>
 
-
-
-        <div class="game-button">
-            <button onclick="startLevel2()">Begin Level 2</button>
-        </div>
-
-        <div id="level2-game"></div>
+        <div id="game-area"></div>
 
         <section class="monster-warning">
             <h3>Warning</h3>
@@ -4737,5 +4749,7 @@ function restartGame() {
     location.reload();
 }
  </script>
+ <script src="game.js"></script>
+ <script src="sounds/music.js"></script>
 </body>
 </html>
